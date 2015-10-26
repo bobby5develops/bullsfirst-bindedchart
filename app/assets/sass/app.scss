@@ -1,0 +1,37 @@
+@import "variables";
+@import "base";
+
+// input 
+
+input{
+  border: none;
+}
+
+// navbar
+nav{
+  background-color: #f89f1f;
+}
+
+nav.navbar-inverse{
+  padding: $navbar-padding-all;
+  background-color: #f89f1f;
+
+}
+
+// main-content
+// container
+div.container{
+  margin-top: $grid-column-margin;
+}
+
+
+
+
+
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+// view1 - styles
+h3{
+  display: inline-block;
+
+}

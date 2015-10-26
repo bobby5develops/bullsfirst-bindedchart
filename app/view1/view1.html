@@ -1,0 +1,51 @@
+<div class="pull-left">
+    <div class="" role="group">
+        <h3 class="pull-left">Accounts</h3>
+        <button class="btn btn-default pull-right" ng-click="addRow()">Add new row</button>
+    </div>
+
+    <table data-toggle="table" class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    NAME
+                </th>
+                <th>
+                    <span></span>MARKET VALUE
+                </th>
+                <th>
+                    CASH
+                </th>
+                <th>
+                    LEGEND
+                </th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="row in chartData" ng-class="rowClass($index)">
+             <td><input ng-model="row[0]"></td>
+             <td><input ng-model="row[1]"></td>
+             <td><button ng-click="deleteRow($index)">&times;</button></td>
+             <td></td>
+        </tbody>
+    </table>
+
+</div>
+<!--hide chart control panel-->
+<div class="pull-right" style="display:none">
+    <h3>Chart Info</h3> Title:
+    <input ng-model="chartTitle" class="title">
+    <br/>Width:
+    <input ng-model="chartWidth">
+    <br/>Height:
+    <input ng-model="chartHeight">
+    <br/>
+</div>
+
+
+
+
+
+<pie-chart class="pull-right" data="chartData" title="{{chartTitle}}" width="{{chartWidth}}"
+           height="{{chartHeight}}" select="selectRow(selectedRowIndex)"></pie-chart>
+<!--<div id="piechart" style="width: 900px; height: 500px;"></div>-->
+
